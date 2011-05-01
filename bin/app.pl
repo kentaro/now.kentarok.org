@@ -1,5 +1,5 @@
 #!/usr/bin/env perl
 use Dancer;
-use Dotcloud::Kentaro;
+use Kentarok::Now;
 
 dance;

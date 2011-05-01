@@ -3,9 +3,9 @@ use warnings;
 use ExtUtils::MakeMaker;
 
 WriteMakefile(
-    NAME         => 'Dotcloud::Kentaro',
+    NAME         => 'Kentarok::Now',
     AUTHOR       => 'Kentaro Kuribayashi',
-    VERSION_FROM => 'lib/Dotcloud/Kentaro.pm',
+    VERSION_FROM => 'lib/Kentarok/Now.pm',
 
     ($ExtUtils::MakeMaker::VERSION >= 6.3002
       ? ('LICENSE'=> 'MIT')

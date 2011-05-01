@@ -1,6 +1,6 @@
-package Dotcloud::Kentaro::App::Now;
+package Kentarok::Now::App::Now;
 use Mouse;
-extends 'Dotcloud::Kentaro::App';
+extends 'Kentarok::Now::App';
 
 has 'user' => (
     is  => 'rw',
@@ -21,11 +21,11 @@ has 'error' => (
 no Mouse;
 __PACKAGE__->meta->make_immutable;
 
-use Dotcloud::Kentaro::Model::Now;
+use Kentarok::Now::Model::Now;
 
 sub entries {
     my ($self, $offset, $limit) = @_;
-    my $model = Dotcloud::Kentaro::Model::Now->new;
+    my $model = Kentarok::Now::Model::Now->new;
        $model->retrieve(
            offset => $offset,
            limit  => $limit,
@@ -43,7 +43,7 @@ sub create {
         return;
     }
     else {
-        my $model = Dotcloud::Kentaro::Model::Now->new;
+        my $model = Kentarok::Now::Model::Now->new;
            $model->create(%args);
     }
 

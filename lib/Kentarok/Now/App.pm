@@ -1,4 +1,4 @@
-package Dotcloud::Kentaro::App;
+package Kentarok::Now::App;
 use Mouse;
 no Mouse;
 __PACKAGE__->meta->make_immutable;

@@ -1,9 +1,9 @@
-package Dotcloud::Kentaro::Model;
+package Kentarok::Now::Stroge;
 use Mouse::Role;
 
 requires qw(
     create
-    retrieve
+    retrive
     update
     delete
 );

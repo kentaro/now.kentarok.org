@@ -1,6 +1,8 @@
-package Dotcloud::Kentaro::Model::Now;
+package Kentarok::Now::Model::Now;
 use Mouse;
-with qw(Dotcloud::Kentaro::Model);
+with qw(Kentarok::Now::Model);
+
+use UNIVERSAL::require;
 
 has 'table' => (
     is      => 'rw',
@@ -11,16 +13,14 @@ has 'table' => (
 has 'storage' => (
     is      => 'rw',
     default => sub {
-        Dotcloud::Kentaro::Storage::Redis->use;
-        Dotcloud::Kentaro::Storage::Redis->new;
+        Kentarok::Now::Storage::Redis->use;
+        Kentarok::Now::Storage::Redis->new;
     },
     lazy => 1,
 );
 
 no Mouse;
 __PACKAGE__->meta->make_immutable;
-
-use UNIVERSAL::require;
 
 sub create {
     my ($self, %args) = @_;

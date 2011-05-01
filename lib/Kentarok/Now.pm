@@ -1,15 +1,15 @@
-package Dotcloud::Kentaro;
+package Kentarok::Now;
 use Dancer ':syntax';
 use Dancer::Plugin::Auth::Twitter;
 
 our $VERSION = '0.01';
 
-use Dotcloud::Kentaro::App::Now;
+use Kentarok::Now::App::Now;
 
 auth_twitter_init;
 
 get '/' => sub {
-    my $app = Dotcloud::Kentaro::App::Now->new(
+    my $app = Kentarok::Now::App::Now->new(
         user        => session('twitter_user'),
         twitter_url => !session('twitter_user') ? auth_twitter_authenticate_url : undef,
     );
@@ -18,7 +18,7 @@ get '/' => sub {
 };
 
 post '/' => sub {
-    my $app = Dotcloud::Kentaro::App::Now->new(
+    my $app = Kentarok::Now::App::Now->new(
         user => session('twitter_user'),
     );
 

@@ -1,6 +1,6 @@
-package Dotcloud::Kentaro::Storage::Redis;
+package Kentarok::Now::Storage::Redis;
 use Mouse;
-with qw(Dotcloud::Kentaro::Storage);
+with qw(Kentarok::Now::Storage);
 
 no Mouse;
 __PACKAGE__->meta->make_immutable;
