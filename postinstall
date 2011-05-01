@@ -1,2 +1,4 @@
 #!/bin/sh
-echo finished install
+
+cd $HOME/code/.; ln -s ../../etc/kentaro.now/deployment.yml environments/deployment.yml
+echo made a symbolic link to the configuration file.
