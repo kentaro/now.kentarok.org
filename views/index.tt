@@ -1,0 +1,28 @@
+[%- IF app.error %]
+<div>
+  <p style="text-align: center; color:red; font-weight:bold">もっと空気を読んで！！１</p>
+</div>
+[%- END # IF app.error %]
+
+[%- IF app.user %]
+<form action="/" method="post" class="now">
+  <textarea name="now" placeholder="ほむほむ〜"></textarea>
+  <input type="submit" value="ほむ〜" />
+</form>
+[%- ELSE # IF app.user %]
+<a href="[% app.twitter_url | html %]">Twitterユーザでログインしてね☆</a>
+[%- END # IF app.user %]
+
+[%- FOREACH entry in app.entries(0,50) %]
+<div class="entry">
+  <div class="profile-image">
+    <img src="[% entry.user.profile_image_url | html %]">
+  </div>
+  <div class="username">
+    [% entry.user.screen_name | html %]
+  </div>
+  <div class="body">
+    [%- entry.now | html %]
+  </div>
+</div>
+[%- END # FOREACH entry in app.entries(0,50) %]

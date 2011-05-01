@@ -1,0 +1,16 @@
+#!/usr/bin/env perl
+use strict;
+use warnings;
+use Daiku;
+
+task deploy => [qw(push symlink)];
+
+task push => sub {
+    system qw(dotcloud push kentaro.now .)
+};
+
+task symlink => sub {
+    system qw(dotcloud run kentaro.now -- cd code/.; ln -s ../../etc/kentaro.now/deployment.yml environments/deployment.yml)
+};
+
+build shift @ARGV || 'deploy';

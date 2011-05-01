@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="http://now.hatena.ne.jp/css/now.css" type="text/css" media="all" />
+    <title>どっとくらうどなう</title>
+  </head>
+  <body>
+    <div id="header">
+      <div id="header-body">
+        <div class="logo"><a href="/">どっとくらうど<span>なう</span></a></div>
+      </div>
+      [%- IF app.user %]
+      <div class="username">
+        <a href="http://twitter.com/[% app.user.screen_name | html %]"><img src="[% app.user.profile_image_url | html %]"> [% app.user.screen_name | html %]</a>
+      </div>
+      [%- END # IF app.user %]
+    </div>
+    <div id="container">
+      <div id="main">
+        [% content %]
+      </div>
+    </div>
+  </body>
+</html>
